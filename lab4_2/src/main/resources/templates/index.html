@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Line&Plane</title>
+    <style>
+        .line {
+            display: flex;
+            align-items: center;
+        }
+
+        .a1 {
+            display: grid;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        .a1 hr {
+            width: 75px;
+            margin: 5px 0 5px 0;
+        }
+
+        .plane {
+            margin-top: 30px;
+        }
+
+        .A {
+            display: flex;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        .A p {
+            margin: 0;
+            padding: 0 8px;
+        }
+
+        .lineTopInput {
+            width: 50px;
+
+        }
+
+        .lineBotInput {
+            width: 70px;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .planeInput {
+            width: 70px;
+        }
+
+        .lastInput {
+            margin: 10px 0 0 10px;
+        }
+
+        .formBorder {
+            border: 3px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<label>
+    <select name="lang" form="linePlaneForm">
+        <option value="English">eng</option>
+        <option value="Ukrainian">укр</option>
+    </select>
+</label>
+<form method="post" action="/line" class="formBorder" id="linePlaneForm">
+    <div class="line">
+        <div class="a1">
+            <div style="display: flex">
+                <p>x - </p>
+                <input type="number" name="x0" class="lineTopInput">
+            </div>
+            <hr>
+            <input type="number" name="a1" class="lineBotInput">
+        </div>
+        <p>=</p>
+        <div class="a1">
+            <div style="display: flex">
+                <p>y - </p>
+                <input type="number" name="y0" class="lineTopInput">
+            </div>
+            <hr>
+            <input type="number" name="a2" class="lineBotInput">
+        </div>
+        <p>=</p>
+        <div class="a1">
+            <div style="display: flex">
+                <p>z - </p>
+                <input type="number" name="z0" class="lineTopInput">
+            </div>
+            <hr>
+            <input type="number" name="a3" class="lineBotInput">
+        </div>
+    </div>
+    <div class="plane">
+        <div class="A">
+            <input type="number" name="A" class="planeInput">
+            <p>x +</p>
+            <input type="number" name="B" class="planeInput">
+            <p>y +</p>
+            <input type="number" name="C" class="planeInput">
+            <p>z +</p>
+            <input type="number" name="D" class="planeInput">
+            <p>= 0</p>
+        </div>
+    </div>
+    <input class="lastInput" type="submit" value="Дізнатись розташування між прямою і площиною">
+</form>
+<p class="lastInput">Or you can choose a file</p>
+<form method="post" action="/file" enctype="multipart/form-data" class="formBorder">
+    <div class="lastInput">
+        <input type="file" id="file" name="file">
+    </div>
+    <div class="lastInput">
+        <input type="submit" value="Надіслати файл">
+    </div>
+</form>
+</body>
+</html>
